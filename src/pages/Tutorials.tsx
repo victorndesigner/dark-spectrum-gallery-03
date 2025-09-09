@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { VideoCard } from '@/components/VideoCard';
 import { tutorials } from '@/data/tutorials';
 import { useTranslation } from '@/hooks/useTranslation';
+import bannerBg from '@/assets/banner-bg.jpg';
 
 const Tutorials = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,8 +22,9 @@ const Tutorials = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <div className="bg-gradient-primary py-16">
-        <div className="container mx-auto px-4 text-center">
+      <div className="relative py-16 bg-cover bg-center" style={{ backgroundImage: `url(${bannerBg})` }}>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t('tutorials')}
           </h1>
