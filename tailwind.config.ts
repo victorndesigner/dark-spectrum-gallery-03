@@ -59,6 +59,7 @@ export default {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-dark': 'var(--gradient-dark)',
         'gradient-surface': 'var(--gradient-surface)',
+        'gradient-purple': 'var(--gradient-purple)',
       },
       boxShadow: {
         'purple': 'var(--shadow-purple)',

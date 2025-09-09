@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 type Language = 'br' | 'us';
 
@@ -70,11 +70,13 @@ export const useTranslation = () => {
 
   useEffect(() => {
     localStorage.setItem('language', language);
+    // Force re-render by dispatching a custom event
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: language }));
   }, [language]);
 
-  const t = (key: string): string => {
+  const t = useMemo(() => (key: string): string => {
     return translations[language][key] || key;
-  };
+  }, [language]);
 
   const changeLanguage = (newLanguage: Language) => {
     setLanguage(newLanguage);

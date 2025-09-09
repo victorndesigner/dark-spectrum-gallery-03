@@ -2,9 +2,11 @@ import { PageBanner } from "@/components/PageBanner";
 import { VideoCard } from "@/components/VideoCard";
 import { tutorials } from "@/data/tutorials";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguageUpdater } from "@/hooks/useLanguageUpdater";
 
 const Posts = () => {
   const { t } = useTranslation();
+  useLanguageUpdater();
 
   // Get latest 3 videos
   const latestVideos = tutorials.slice(0, 3);
