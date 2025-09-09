@@ -13,10 +13,9 @@ export const LanguageToggle = () => {
       variant="outline"
       size="sm"
       onClick={toggleLanguage}
-      className="h-9 px-3 font-medium flex items-center gap-2"
+      className="h-9 px-3 font-medium"
     >
-      <span className="text-base">🌐</span>
-      {language === 'br' ? 'BR' : 'US'}
+      {language === 'br' ? '🇧🇷' : '🇺🇸'} {language.toUpperCase()}
     </Button>
   );
 };

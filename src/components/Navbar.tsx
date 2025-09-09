@@ -31,7 +31,7 @@ export const Navbar = () => {
           {/* Logo and Title */}
           <div className="flex items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text">
+              <h1 className="text-2xl font-bold text-gradient-purple">
                 GameHub
               </h1>
               <p className="text-sm text-muted-foreground">
@@ -54,7 +54,7 @@ export const Navbar = () => {
                 to={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
                   isActive(item.href)
-                    ? 'text-transparent bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text border-b-2 border-transparent bg-gradient-purple pb-1'
+                    ? 'text-gradient-purple border-b-2 border-transparent bg-gradient-purple bg-clip-text pb-1'
                     : 'text-muted-foreground'
                 }`}
               >
@@ -89,7 +89,7 @@ export const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
                     isActive(item.href)
-                      ? 'text-transparent bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text'
+                      ? 'text-gradient-purple'
                       : 'text-muted-foreground'
                   }`}
                 >
