@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageUpdater } from '@/hooks/useLanguageUpdater';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -11,7 +10,6 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
-  useLanguageUpdater();
 
   const navItems = [
     { href: '/', label: t('home') },
@@ -31,7 +29,7 @@ export const Navbar = () => {
           {/* Logo and Title */}
           <div className="flex items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-gradient-purple">
+              <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 GameHub
               </h1>
               <p className="text-sm text-muted-foreground">
@@ -54,7 +52,7 @@ export const Navbar = () => {
                 to={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
                   isActive(item.href)
-                    ? 'text-gradient-purple border-b-2 border-transparent bg-gradient-purple bg-clip-text pb-1'
+                    ? 'text-primary border-b-2 border-primary pb-1'
                     : 'text-muted-foreground'
                 }`}
               >
@@ -89,7 +87,7 @@ export const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
                     isActive(item.href)
-                      ? 'text-gradient-purple'
+                      ? 'text-primary'
                       : 'text-muted-foreground'
                   }`}
                 >

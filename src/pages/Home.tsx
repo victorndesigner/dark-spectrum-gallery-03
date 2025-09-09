@@ -2,11 +2,9 @@ import { GamePost } from "@/components/GamePost";
 import { PageBanner } from "@/components/PageBanner";
 import { games } from "@/data/games";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useLanguageUpdater } from "@/hooks/useLanguageUpdater";
 
 const Home = () => {
   const { t } = useTranslation();
-  useLanguageUpdater();
 
   return (
     <div className="min-h-screen bg-background">

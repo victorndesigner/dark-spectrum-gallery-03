@@ -2,11 +2,9 @@ import { GamePost } from "@/components/GamePost";
 import { PageBanner } from "@/components/PageBanner";
 import { games } from "@/data/games";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useLanguageUpdater } from "@/hooks/useLanguageUpdater";
 
 const StumbleCups = () => {
   const { t } = useTranslation();
-  useLanguageUpdater();
 
   // Filter games for stumble cups theme (using games 6-12)
   const stumbleGames = games.slice(6, 12);

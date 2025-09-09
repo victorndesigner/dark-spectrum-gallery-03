@@ -47,7 +47,6 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(252 56% 57%));
     --gradient-dark: linear-gradient(135deg, hsl(258 90% 66%), hsl(262 83% 58%));
-    --gradient-purple: linear-gradient(90deg, hsl(262 83% 58%), hsl(252 56% 57%));
     
     /* Custom animations and effects */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -91,7 +90,6 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(252 56% 57%));
     --gradient-dark: linear-gradient(135deg, hsl(258 90% 66%), hsl(262 83% 58%));
     --gradient-surface: linear-gradient(145deg, hsl(240 5.9% 10%), hsl(240 3.7% 15.9%));
-    --gradient-purple: linear-gradient(90deg, hsl(262 83% 58%), hsl(252 56% 57%));
     
     /* Enhanced shadows for dark theme */
     --shadow-purple: 0 10px 25px -5px hsl(262 83% 58% / 0.25);
@@ -108,39 +106,6 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Purple particles effect */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    background-image: 
-      radial-gradient(2px 2px at 20% 30%, hsl(262 83% 58% / 0.3), transparent),
-      radial-gradient(2px 2px at 40% 70%, hsl(252 56% 57% / 0.3), transparent),
-      radial-gradient(1px 1px at 90% 40%, hsl(258 90% 66% / 0.3), transparent),
-      radial-gradient(1px 1px at 50% 90%, hsl(262 83% 58% / 0.2), transparent),
-      radial-gradient(2px 2px at 10% 60%, hsl(252 56% 57% / 0.2), transparent);
-    background-size: 100px 100px, 150px 150px, 80px 80px, 120px 120px, 90px 90px;
-    animation: float 20s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { 
-      transform: translateY(0px) rotate(0deg); 
-      opacity: 0.3;
-    }
-    50% { 
-      transform: translateY(-20px) rotate(180deg); 
-      opacity: 0.6;
-    }
   }
 
   /* Scrollbar styling */
@@ -175,16 +140,5 @@ All colors MUST be HSL.
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .bg-gradient-purple {
-    background: var(--gradient-purple);
-  }
-
-  .text-gradient-purple {
-    background: var(--gradient-purple);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }

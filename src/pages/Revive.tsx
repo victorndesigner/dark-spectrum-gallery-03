@@ -2,11 +2,9 @@ import { GamePost } from "@/components/GamePost";
 import { PageBanner } from "@/components/PageBanner";
 import { games } from "@/data/games";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useLanguageUpdater } from "@/hooks/useLanguageUpdater";
 
 const Revive = () => {
   const { t } = useTranslation();
-  useLanguageUpdater();
 
   // Filter games for revive theme (just example, using first 6 games)
   const reviveGames = games.slice(0, 6);

@@ -1,9 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Play, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageUpdater } from '@/hooks/useLanguageUpdater';
 
 interface VideoCardProps {
   id: number;
@@ -17,7 +16,6 @@ interface VideoCardProps {
 export const VideoCard = ({ title, titleEn, thumbnail, youtubeUrl, videoId }: VideoCardProps) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const { t, language } = useTranslation();
-  useLanguageUpdater();
 
   const currentTitle = language === 'br' ? title : titleEn;
 

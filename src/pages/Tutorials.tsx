@@ -4,12 +4,10 @@ import { Input } from '@/components/ui/input';
 import { VideoCard } from '@/components/VideoCard';
 import { tutorials } from '@/data/tutorials';
 import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageUpdater } from '@/hooks/useLanguageUpdater';
 
 const Tutorials = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { t, language } = useTranslation();
-  useLanguageUpdater();
 
   const filteredTutorials = useMemo(() => {
     if (!searchTerm) return tutorials;
